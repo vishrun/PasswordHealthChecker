@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 export class HomeComponent {
 
   password: string = '';
+  randompwd: string = 'An12$2@53A!'
+  lengthpwd = 10;
 
   TestStrength()
   {
@@ -34,5 +36,17 @@ export class HomeComponent {
     else{
       alert("Medium Strength. Make sure you have atleast one Uppercase, lowercase and digit character")
     }
+  }
+
+  GeneratePassword(){
+    this.randompwd = ''
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&,./?*';
+    for (let i=0; i<this.lengthpwd; i++){
+      this.randompwd += characters.charAt(Math.floor(Math.random()* characters.length))
+    }
+  }
+
+  redirect() {
+    window.open('https://haveibeenpwned.com/');
   }
 }

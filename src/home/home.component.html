@@ -1,10 +1,28 @@
 <img src="">
 <div class="flex flex-col items-center justify-center p-4 space-y-4">
+    <div class="font-bold">Go ahead check the password strength</div>
     <input type="password" [(ngModel)]="password" placeholder="Enter your password"
-        class="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-80" />
+        class="px-4 py-2 rounded-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-80" />
 
     <button (click)="TestStrength()"
         class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
         Check Password
     </button>
+
+
+</div>
+
+<div class="flex flex-col items-center justify-center p-4 space-y-4">
+    <div class="font-bold">Do you want to generate a random password?</div>
+    <button
+        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        (click)="GeneratePassword()">Click me to generate a strong password</button>
+    <div>Your Generated Password is <span class="font-bold">{{randompwd}}</span></div>
+</div>
+
+<div class="flex flex-col items-center justify-center p-4 space-y-4">
+    <div class="font-bold">How safe is your email from Data breech?</div>
+    <button
+        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        (click)="redirect()">Click here to find out</button>
 </div>
